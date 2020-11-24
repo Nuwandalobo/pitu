@@ -1,2 +1,2 @@
 # pitu
-A simple micro-ssas for URL shortening.
+A simple micro-saas for URL shortening. (Um micro-saas simples para encurtamento de links)

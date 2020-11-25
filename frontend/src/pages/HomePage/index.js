@@ -1,4 +1,7 @@
 import React from 'react';
+import {Container} from 'react-bootstrap';
+import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import Header from '../../components/header';
 
 class HomePage extends React.Component { 
     
@@ -9,7 +12,12 @@ class HomePage extends React.Component {
 
     render() {
         return (
-            <p>Pitu</p>
+          
+            <Container>
+                <Header/>
+                <FontAwesomeIcon icon = "paw"/>
+                Pitu
+            </Container> 
         )
     }
 

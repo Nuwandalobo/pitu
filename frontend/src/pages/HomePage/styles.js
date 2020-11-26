@@ -16,3 +16,14 @@ export const Form = styled.form`
     border-radius: .15rem;
     text-align: center;
 `;
+
+export const AdBlock = styled.div`
+    border: solid 1px #588587;
+    background-color: #36313f;
+    text-align: center;
+    text-center;
+    padding: 2rem;
+    flex: 0 0 80%;
+    max-width: 80%;
+   
+    `;

@@ -1,8 +1,10 @@
 import styled from 'styled-components';
 
 export const HeaderContainer = styled.div`
+    margin-top: 2rem;  
     padding: 3 rem;
     text-align: center;
+    margin-bottom: 4rem;
 
 `;
 

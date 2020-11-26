@@ -1,23 +1,34 @@
-import styled from 'styled-components';
+import styled from "styled-components";
+
+export const Container = styled.div`
+  margin-bottom: 4rem;
+`;
 
 export const StatsContainer = styled.div`
-
-    display:block;
-    `;
+  display: block;
+`;
 
 export const StatsRow = styled.div`
     display: flex;
     flex-wrap: wrap;
-    justify-content: center "important;
+    justify-content: center !important;
     margin-bottom: 0.5rem;
     `;
 
 export const StatsBox = styled.div`
-    flex: 0 0 25%;
-    max-width: 25%;
-    padding: 2rem;
-    border: solid 1px #ccc;
-    border-radius: .25rem;
-    text-align: center;
-    margin: .5rem;
-    `;
+  flex: 0 0 25%;
+  max-width: 25%;
+  padding: 2rem;
+  border: solid 1px #ccc;
+  border-radius: 0.25rem;
+  text-align: center;
+  margin: 0.5rem;
+`;
+
+export const StatsBoxTitle = styled.div`
+
+ font-weight: 500,
+ padding: 0.25rem,
+ display: block;
+
+ `;

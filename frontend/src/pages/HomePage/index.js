@@ -8,8 +8,8 @@ import {
   Alert,
   Spinner,
 } from "react-bootstrap";
-import { ContentContainer, Form } from "./styles";
-import ShortnerService from "../../services/ShortnerService";
+import { ContentContainer, Form, AdBlock } from "./styles";
+import ShortenerService from "../../services/ShortnerService";
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -37,7 +37,7 @@ class HomePage extends React.Component {
       });
     } else {
       try {
-        const service = new ShortnerService();
+        const service = new ShortenerService();
         const result = await service.generate({ url });
 
         this.setState({ isLoading: false, code: result.code });
@@ -51,9 +51,9 @@ class HomePage extends React.Component {
   };
 
   copyToClipboard = () => {
-      const element = this.inputURL;
-      element.select();
-      document.execCommand('copy');
+    const element = this.inputURL;
+    element.select();
+    document.execCommand('copy');
   }
 
   render() {
@@ -63,7 +63,7 @@ class HomePage extends React.Component {
         <Header>Seu novo encurtador de URL. :)</Header>
         <ContentContainer>
           <Form onSubmit={this.handleSubmit}>
-            <InputGroup className = "mb-3">
+            <InputGroup className="mb-3">
               <FormControl
                 placeholder="Digite sua url para encurtar"
                 defaultValue=""
@@ -78,26 +78,29 @@ class HomePage extends React.Component {
             {isLoading ? (
               <Spinner animation="border" />
             ) : (
-              code && (
-                <>                  
-                  <InputGroup className = "mb-3">
-                    <FormControl 
-                      autoFocus={true}                   
-                      defaultValue={`https://pitu.tk/${code}`}
-                      ref={(input) => this.inputURL = input}
-                    />
-                    <InputGroup.Append>
-                      <Button variant="outline-success" onClick={() => this.copyToClipboard()}>
-                        Copiar
+                code && (
+                  <>
+                    <InputGroup className="mb-3">
+                      <FormControl
+                        autoFocus={true}
+                        defaultValue={`https://pitu.tk/${code}`}
+                        ref={(input) => this.inputURL = input}
+                      />
+                      <InputGroup.Append>
+                        <Button variant="outline-success" onClick={() => this.copyToClipboard()}>
+                          Copiar
                       </Button>
-                    </InputGroup.Append>
-                  </InputGroup>
-                  <p>Para acompanhar as estatísticas, acesse https://pitu.tk/{code}</p>
-                </>
-              )
-            )}
+                      </InputGroup.Append>
+                    </InputGroup>
+                    <p>Para acompanhar as estatísticas, acesse https://pitu.tk/{code}</p>
+                  </>
+                )
+              )}
             {errorMensage && <Alert variant="danger">{errorMensage}</Alert>}
           </Form>
+        </ContentContainer>
+        <ContentContainer>
+          <AdBlock>Adsense</AdBlock>
         </ContentContainer>
       </Container>
     );

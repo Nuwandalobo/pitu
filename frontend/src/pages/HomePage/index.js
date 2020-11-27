@@ -10,6 +10,7 @@ import {
 } from "react-bootstrap";
 import { ContentContainer, Form, AdBlock } from "./styles";
 import ShortenerService from "../../services/ShortnerService";
+import vars from '../../configs/vars';
 
 class HomePage extends React.Component {
   constructor(props) {
@@ -61,6 +62,7 @@ class HomePage extends React.Component {
     return (
       <Container>
         <Header>Seu novo encurtador de URL. :)</Header>
+        <p className ="text-white-50"> Nosso Pitu é uma ferramenta gratuita para encurtar o link do seu evento, congresso, webinar, reunião virtual de trabalho, etc. Use o nosso encurtador de URL para diminuir uma url longa e gerar um link curto. Cole o link completo e clique no botão Encurtar. A seguir, copie a URL encurtada e compartilhe com seus contatos.</p>
         <ContentContainer>
           <Form onSubmit={this.handleSubmit}>
             <InputGroup className="mb-3">
@@ -83,16 +85,16 @@ class HomePage extends React.Component {
                     <InputGroup className="mb-3">
                       <FormControl
                         autoFocus={true}
-                        defaultValue={`https://pitu.tk/${code}`}
+                        defaultValue={vars.HOST_APP + code}
                         ref={(input) => this.inputURL = input}
-                      />
+                      />  
                       <InputGroup.Append>
                         <Button variant="outline-success" onClick={() => this.copyToClipboard()}>
                           Copiar
                       </Button>
                       </InputGroup.Append>
                     </InputGroup>
-                    <p>Para acompanhar as estatísticas, acesse https://pitu.tk/{code}</p>
+                    <p>Para acompanhar as estatísticas, acesse {vars.HOST_APP + code}/stats</p>
                   </>
                 )
               )}

@@ -1,7 +1,13 @@
-# pitu
+# Pitu
 A <i>simple micro-saas</i> for URL shortening. (Um micro-saas simples para encurtamento de links)
 
 The project was temporally hosted in this url: www.curtopitu.tk
+
+<h2>Requirements</h2>
+
+- Local Database in MySql or upload in cloud.
+- Node Js.
+
 
 <h3>Tests</h3>
 
